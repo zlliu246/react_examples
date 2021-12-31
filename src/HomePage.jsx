@@ -19,20 +19,29 @@ class Parent extends React.Component {
 
     render () {
         return <div>
-            <h1>From Parent Component: {this.state.message} </h1> <br/>
-            <ChildComponent message={this.state.message} />
+            <h1>From Parent Component: {this.state.message} </h1>
+            <Child message={this.state.message} />
         </div>
     }
 }
 
-class ChildComponent extends React.Component {
+class Child extends React.Component {
 
     render() {
         return <h1>
             From Child Component: {this.props.message}
+            <GrandChild randomVariableName={this.props.message} />
         </h1>
     }
 
+}
+
+class GrandChild extends React.Component {
+    render() {
+        return <h1>
+            From GrandChild Component: {this.props.randomVariableName}
+        </h1>
+    }
 }
 
 export default Parent
