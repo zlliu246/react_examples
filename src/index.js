@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import HomePage from "./HomePage"
+import Parent from "./HomePage"
 
 ReactDOM.render(
 
-  <HomePage />,
+  <Parent />,
   document.getElementById('root')
 );
 

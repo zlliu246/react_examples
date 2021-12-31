@@ -1,14 +1,15 @@
 import React from "react"
 import axios from "axios"
 
-class HomePage extends React.Component {
+class Parent extends React.Component {
     
-    state = {
-        message: "default message"
-    }
+    state = {message: "default message"}
 
     componentDidMount() {
-        axios.get("https://api.npoint.io/df2c42f9149aa832ea14")
+
+        const url = "https://api.npoint.io/df2c42f9149aa832ea14"
+
+        axios.get(url)
         .then((response) => {
             this.setState({
                 message: response.data.message
@@ -18,9 +19,20 @@ class HomePage extends React.Component {
 
     render () {
         return <div>
-            {this.state.message}
+            <h1>From Parent Component: {this.state.message} </h1> <br/>
+            <ChildComponent message={this.state.message} />
         </div>
     }
 }
 
-export default HomePage
+class ChildComponent extends React.Component {
+
+    render() {
+        return <h1>
+            From Child Component: {this.props.message}
+        </h1>
+    }
+
+}
+
+export default Parent
