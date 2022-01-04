@@ -33,14 +33,15 @@ class HomePage extends React.Component {
         }
 
         return <div>
-            <h1>This is the home page</h1>
+
             <h1>
                 this.state.innerWidth: {this.state.innerWidth}
             </h1>
 
+            <br />
 
             <h1 style={style}>
-                The background color changes as you resize
+                The background color of this div changes as you resize your screen
             </h1>
 
         </div>
