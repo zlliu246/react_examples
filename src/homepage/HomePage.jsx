@@ -1,13 +1,25 @@
+import "./HomePage.css"
+
 function HomePage() {
 
-    const containerStyle = {
-        margin: "10% 20% 10% 20%",
-        backgroundColor: "lightblue",
-        height: "80vh"
-    }
+    return <div className="content-container">
 
-    return <div style={containerStyle}>
-        This is the home page
+        <div className="row box">
+
+            <div className="left-panel box">
+                Left panel - 50% of width
+            </div>
+
+            <div className="middle-panel box">
+                Middle panel - 30% of width
+            </div>
+
+            <div className="right-panel box">
+                Right panel - 20% of width
+            </div>
+
+        </div>
+
     </div>
 }
 
